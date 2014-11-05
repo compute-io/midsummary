@@ -2,7 +2,13 @@ midsummary
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module to find the midsummary (n% trimmed midrange) for an array of numeric values.
+> Compute module to find the [midsummary](http://en.wikipedia.org/wiki/Mid-range#midsummary) for an array of numeric values.
+
+The midsummary, or n% trimmed midrange, is the average of the n% and (100-n)% percentiles, and has a breakdown point of n%. Trimmed midranges are of interest as descriptive statistics or as L-estimators of central location or skewness: differences of midsummaries, such as midhinge minus the median, give measures of skewness at different points in the tail.
+
+#### Special Cases:
+The 50% midsummary equates to the median (see [median](https://github.com/compute-io/median) module).
+The 25% midsummary is the midhinge (see [midhinge](https://github.com/compute-io/midhinge) module).
 
 
 ## Installation
@@ -19,20 +25,42 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-midsummary' );
+var midsummary = require( 'compute-midsummary' );
 ```
 
-#### foo( arr )
+#### midsummary( arr, perc[, opts] )
 
-What does this function do?
+Computes the midsummary of a numeric `array`.
 
+``` javascript
+var unsorted = [ 8, 2, 3, 9, 5, 1, 4, 10, 7, 0, 6 ];
+
+var mids = midsummary( unsorted, 0.25 );
+// returns 5
+```
+
+If the input `array` is already `sorted` in __ascending__ order, set the `sorted` options flag to `true`.
+
+``` javascript
+var sorted = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+
+var mids = midsummary( sorted, 0.25, {‘sorted': true} );
+// returns 5
+```
+
+Additional options are the same as for the [quantile](https://github.com/compute-io/quantile) module.
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-midsummary' );
-```
+var data = new Array( 100 );
 
+for ( var i = 0; i < data.length; i++ ) {
+    data[ i ] = Math.round( Math.random()*100 );
+}
+
+console.log( midsummary( data, 0.10 ) );
+```
 To run the example code from the top-level application directory,
 
 ``` bash
