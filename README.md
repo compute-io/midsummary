@@ -8,7 +8,7 @@ The __midsummary__, or __*n*% trimmed midrange__, is the average of the *n*% and
 
 #### Special Cases:
 + The 50% midsummary equates to the median (see [median](https://github.com/compute-io/median) compute module).
-+ The 25% midsummary is the midhinge (see [compute-midhinge](https://github.com/compute-io/midhinge) compute module).
++ The 25% midsummary is the midhinge (see [midhinge](https://github.com/compute-io/midhinge) compute module).
 
 
 ## Installation
