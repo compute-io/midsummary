@@ -4,11 +4,11 @@ midsummary
 
 > Compute module to find the [midsummary](http://en.wikipedia.org/wiki/Mid-range#midsummary) for an array of numeric values.
 
-The midsummary, or n% trimmed midrange, is the average of the n% and (100-n)% percentiles, and has a breakdown point of n%. Trimmed midranges are of interest as descriptive statistics or as L-estimators of central location or skewness: differences of midsummaries, such as midhinge minus the median, give measures of skewness at different points in the tail.
+The __midsummary__, or __*n*% trimmed midrange__, is the average of the *n*% and (100-*n*)% percentiles, and has a breakdown point of *n*%. Trimmed midranges are of interest as descriptive statistics or as L-estimators of central location or skewness: differences of midsummaries, such as [midhinge](http://en.wikipedia.org/wiki/Midhinge) minus the [median](http://en.wikipedia.org/wiki/Median), give measures of skewness at different points in the tail.
 
 #### Special Cases:
-The 50% midsummary equates to the median (see [median](https://github.com/compute-io/median) module).
-The 25% midsummary is the midhinge (see [midhinge](https://github.com/compute-io/midhinge) module).
++ The 50% midsummary equates to the median (see [median](https://github.com/compute-io/median) compute module).
++ The 25% midsummary is the midhinge (see [compute-midhinge](https://github.com/compute-io/midhinge) compute module).
 
 
 ## Installation
@@ -30,7 +30,7 @@ var midsummary = require( 'compute-midsummary' );
 
 #### midsummary( arr, perc[, opts] )
 
-Computes the midsummary of a numeric `array`.
+Computes the *n*% midsummary of a numeric `array`, where *n* is given as the second argument, in decimal form, and satisfies 0.0 <= *n* <= 0.50.
 
 ``` javascript
 var unsorted = [ 8, 2, 3, 9, 5, 1, 4, 10, 7, 0, 6 ];
@@ -44,7 +44,7 @@ If the input `array` is already `sorted` in __ascending__ order, set the `sorted
 ``` javascript
 var sorted = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
-var mids = midsummary( sorted, 0.25, {‘sorted': true} );
+var mids = midsummary( sorted, 0.25, {'sorted': true} );
 // returns 5
 ```
 
