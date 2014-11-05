@@ -23,16 +23,16 @@ describe( 'compute-midsummary', function tests() {
 		expect( midsummary ).to.be.a( 'function' );
 	});
 
-it( 'should throw an error if provided a non-array', function test() {
+	it( 'should throw an error if provided a non-array', function test() {
 		var values = [
-					'5',
-					5,
-					true,
-					undefined,
-					null,
-					NaN,
-					function(){},
-					{}
+			'5',
+			5,
+			true,
+			undefined,
+			null,
+			NaN,
+			function(){},
+			{}
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
@@ -48,14 +48,14 @@ it( 'should throw an error if provided a non-array', function test() {
 
 	it( 'should throw an error if provided a non-numeric value for the second argument', function test() {
 		var values = [
-					'5',
-					true,
-					[],
-					undefined,
-					null,
-					NaN,
-					function(){},
-					{}
+			'5',
+			true,
+			[],
+			undefined,
+			null,
+			NaN,
+			function(){},
+			{}
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
@@ -71,9 +71,9 @@ it( 'should throw an error if provided a non-array', function test() {
 
 	it( 'should throw an error if provided an inappropriate value for the second argument', function test() {
 		var values = [
-					-0.10,
-					0.53,
-					12
+			-0.10,
+			0.53,
+			12
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {
@@ -89,14 +89,14 @@ it( 'should throw an error if provided a non-array', function test() {
 
 	it( 'should throw an error if provided options that are not an object', function test() {
 		var values = [
-					'5',
-					5,
-					[],
-					undefined,
-					null,
-					NaN,
-					function(){},
-					true
+			'5',
+			5,
+			[],
+			undefined,
+			null,
+			NaN,
+			function(){},
+			true
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {

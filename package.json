@@ -1,7 +1,7 @@
 {
   "name": "compute-midsummary",
   "version": "0.0.0",
-  "description": "Compute module to find the midsummary (n% trimmed midrange) for an array of numeric values.",
+  "description": "Computes a trimmed midrange of a numeric array",
   "author": {
     "name": "Rebekah Smith",
     "email": "rebekahjs17@gmail.com"
@@ -32,11 +32,15 @@
     "computation",
     "stats",
     "statistics",
-    "maths",
+    "math",
     "mathematics",
     "midsummary",
+    "midrange",
+    "median",
+    "midhinge",
     "trimmed midrange",
-    "central tendency"
+    "central tendency",
+    "l estimator"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/midsummary/issues"

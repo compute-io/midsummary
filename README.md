@@ -1,14 +1,16 @@
-midsummary
+Midsummary
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module to find the [midsummary](http://en.wikipedia.org/wiki/Mid-range#midsummary) for an array of numeric values.
+> Computes a trimmed midrange ([midsummary](http://en.wikipedia.org/wiki/Mid-range#midsummary)) of a numeric array.
 
-The __midsummary__, or __*n*% trimmed midrange__, is the average of the *n*% and (100-*n*)% percentiles, and has a breakdown point of *n*%. Trimmed midranges are of interest as descriptive statistics or as L-estimators of central location or skewness: differences of midsummaries, such as [midhinge](http://en.wikipedia.org/wiki/Midhinge) minus the [median](http://en.wikipedia.org/wiki/Median), give measures of skewness at different points in the tail.
+The __midsummary__, or __*n*% trimmed midrange__, is the average of the *n*% and (100-*n*)% percentiles, and has a breakdown point of *n*%. The midsummary is a descriptive statistic and also an L-estimator of central location or skewness. Notably, differences between midsummaries, such as between the [midhinge](http://en.wikipedia.org/wiki/Midhinge) and the [median](http://en.wikipedia.org/wiki/Median), describe skewness at different points in a distribution's tail.
 
 #### Special Cases:
-+ The 50% midsummary equates to the median (see [median](https://github.com/compute-io/median) compute module).
-+ The 25% midsummary is the midhinge (see [midhinge](https://github.com/compute-io/midhinge) compute module).
+
++ The 50% midsummary equates to the median (see [compute-median](https://github.com/compute-io/median)).
++ The 25% midsummary is the midhinge (see [compute-midhinge](https://github.com/compute-io/midhinge)).
++ The 0% midsummary is the midrange ( see [compute-midrange](http://en.wikipedia.org/wiki/Mid-range)).
 
 
 ## Installation
@@ -28,9 +30,9 @@ To use the module,
 var midsummary = require( 'compute-midsummary' );
 ```
 
-#### midsummary( arr, perc[, opts] )
+#### midsummary( arr, n[, opts] )
 
-Computes the *n*% midsummary of a numeric `array`, where *n* is given as the second argument, in decimal form, and satisfies 0.0 <= *n* <= 0.50.
+Computes the *n*% midsummary of a numeric `array`. *n* exists on the interval `[0.0, 0.50]` and specifies the proportion of values to discard in the distribution tails.
 
 ``` javascript
 var unsorted = [ 8, 2, 3, 9, 5, 1, 4, 10, 7, 0, 6 ];
@@ -49,6 +51,7 @@ var mids = midsummary( sorted, 0.25, {'sorted': true} );
 ```
 
 Additional options are the same as for the [quantile](https://github.com/compute-io/quantile) module.
+
 
 ## Examples
 
