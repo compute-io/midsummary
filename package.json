@@ -1,6 +1,6 @@
 {
   "name": "compute-midsummary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Computes a trimmed midrange of a numeric array",
   "author": {
     "name": "Rebekah Smith",
@@ -48,7 +48,7 @@
   "dependencies": {
     "compute-quantile": "^1.0.0",
     "validate.io-object": "^1.0.0"
-    },
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
