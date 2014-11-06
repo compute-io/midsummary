@@ -135,4 +135,15 @@ describe( 'compute-midsummary', function tests() {
 		assert.strictEqual( midsummary( data, 0.25 ), expected );
 	});
 
+	it( 'should compute the midrange when n = 0.0', function test() {
+		var data, expected;
+
+		data = [ 9, 4, 3, 7, 1, 3 ];
+		expected = 5;
+
+		// unsorted test
+		assert.strictEqual( midsummary( data, 0.0 ), expected );
+
+	});
+
 });
