@@ -10,7 +10,7 @@ The __midsummary__, or __*n*% trimmed midrange__, is the average of the *n*% and
 
 + The 50% midsummary equates to the median (see [compute-median](https://github.com/compute-io/median)).
 + The 25% midsummary is the midhinge (see [compute-midhinge](https://github.com/compute-io/midhinge)).
-+ The 0% midsummary is the midrange ( see [compute-midrange](http://en.wikipedia.org/wiki/Mid-range)).
++ The 0% midsummary is the midrange ( see [compute-midrange](https://github.com/compute-io/midrange)).
 
 
 ## Installation
@@ -64,6 +64,7 @@ for ( var i = 0; i < data.length; i++ ) {
 
 console.log( midsummary( data, 0.10 ) );
 ```
+
 To run the example code from the top-level application directory,
 
 ``` bash

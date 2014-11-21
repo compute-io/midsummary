@@ -146,4 +146,21 @@ describe( 'compute-midsummary', function tests() {
 
 	});
 
+	it( 'should compute the median when n = 0.5', function test() {
+		var data, expected;
+
+		data = [ 9, 4, 3, 7, 1, 3 ];
+		expected = 3.5;
+
+		// even array test
+		assert.strictEqual( midsummary( data, 0.5 ), expected );
+
+		data = [ 9, 4, 3, 7, 1 ];
+		expected = 4;
+
+		// odd array test
+		assert.strictEqual( midsummary( data, 0.5 ), expected );
+
+	});
+
 });
